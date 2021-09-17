@@ -17,3 +17,5 @@ print(str.replace('Shashi', "Shashi Bhushan"))
 
 print(round(2.9))
 print(math.ceil(2.2))
+print(bool(5))
+print(bool(0))
