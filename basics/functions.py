@@ -66,3 +66,22 @@ def modify_global():
 
 modify_global()
 print(global_variable)
+
+
+# Exercise
+# FizzBuzz problem
+
+
+def find_fizz_buzz(input_value):
+    return_value = input_value
+    if input_value % 3 == 0 or input_value % 5 == 0:
+        return_value = ""
+        if input_value % 3 == 0:
+            return_value += "fizz"
+        if input_value % 5 == 0:
+            return_value += "buzz"
+    return return_value
+
+
+fizzbuzz = find_fizz_buzz(7)
+print(fizzbuzz)
