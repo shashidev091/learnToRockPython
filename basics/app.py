@@ -38,5 +38,30 @@ mini = a if a > 10 else 0
 
 print(mini)
 
-b = input('Enter something\n')
-print(b)
+# b = input('Enter something\n')
+# print(b)
+
+# for loops in python
+
+for number in range(3):
+    print('Say my name', number + 1, (number + 1) * ".")
+
+for number in range(1, 10, 2):
+    print('Say my name', number, number * ".")
+
+successful = True
+for number in range(3):
+    print("Attempts")
+    if successful:
+        print("Successful")
+        break
+else:
+    print("Attempted 3 times and failed")
+
+# find even numbers
+count = 0
+for number in range(1, 10):
+    if number % 2 == 0:
+        print(number)
+        count += 1
+print(f"we have {count} even numbers.")
