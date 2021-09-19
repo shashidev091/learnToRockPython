@@ -84,3 +84,36 @@ print(output)
 
 print({dict_two[x] for x in dict_two})
 print({x for x in dict_two.items()})
+
+"""
+    => Generators and Unpacking
+"""
+# this returns an generator object, they can be iterated
+val = (x for x in dict_two.items())
+
+for x in val:
+    print(x)
+
+# unpacking with * for list and "**" for dictionaries
+gen_list = [item for item in (x for x in dict_two.items())]
+print(*gen_list)
+
+dict_three = dict(a=10, b=20)
+print({**dict_one, **dict_two, **dict_three})
+
+"""
+    - Exercise
+    - find the most repeated string
+"""
+
+sentence = "This is a common interview question"
+
+sequence = {}
+for item in sentence:
+    if item in sequence:
+        sequence[item] += 1
+    else:
+        sequence[item] = 1
+
+sorted_list = sorted(sequence.items(), key=lambda items: items[1], reverse=True)
+print(sorted_list[0])
