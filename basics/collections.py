@@ -74,3 +74,13 @@ for key in dict_two:
 for key, value in dict_two.items():
     print(key, value)
 
+"""
+    - dictionary comprehension
+"""
+
+# [expression for item in items]
+output = {x: x * 2 for x in range(5)}
+print(output)
+
+print({dict_two[x] for x in dict_two})
+print({x for x in dict_two.items()})
