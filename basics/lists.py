@@ -1,3 +1,4 @@
+from collections import deque
 numbers_list = list(range(20))
 print(numbers_list)
 
@@ -116,5 +117,53 @@ print(list(filtered))
 
 """
     - Comprehension
+    - zip()
 """
 
+mapped = [product[1] * 10 for product in products]
+print(mapped)
+
+filtered = [product for product in products if product[1] > 10]
+print(filtered)
+
+"""
+    - Queue and de-queue
+"""
+
+queue_list = deque([])
+queue_list.append(1)
+queue_list.append(2)
+queue_list.append(3)
+
+print(queue_list)
+# remove item from the beginning
+queue_list.popleft()
+print(queue_list)
+
+if not queue_list:
+    print('Empty')
+else:
+    print(len(queue_list))
+
+"""
+    => Tuples
+    - tuples are immutable iterable objects
+    - tuple is read-only so we do not have any add or remove methods
+    - we can concat two tuples
+    - similar to lists we can get items using indexes
+    - we can check tuples using "in" operator
+"""
+
+point = (1, 3, 4)
+print(point)
+
+concat_tuple = point + (5, 6, 7)
+print(concat_tuple)
+
+# we can declare tuple without the parenthesis also
+# but if there is only one item then it should end with , so that compiler doesn't get confused
+without_parenthesis = 1,
+print(without_parenthesis)
+
+if 6 in concat_tuple:
+    print("yes it exists")
