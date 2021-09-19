@@ -63,4 +63,58 @@ print(fruits)
 # to get the numbers of occurrence in the list
 print(fruits.count("figs"))
 
- 
+# You can find the index of any element in the list
+print(fruits.index('figs'))
+
+"""
+    Sorting list in Python
+    - using sort() alters the original list
+    - where as predefines method sorted() does not
+"""
+fruits.sort(reverse=True)
+print(fruits)
+
+sorted(list_of_string)
+print(list_of_string)
+
+"""
+    # Sort a list of tuples
+"""
+
+products = [
+    ("Product_1", 10),
+    ("Product_2", 9),
+    ("Product_3", 22)
+]
+
+print(products)
+
+for product_name, product_price in products:
+    print(f"Product {product_name} is of {product_price}")
+
+# sort according to the price of the product
+
+products.sort(key=lambda item: item[1])
+print(products)
+
+products.sort(key=lambda item: item[1], reverse=True)
+print(products)
+
+"""
+    - map function
+    - filter function
+"""
+
+x = map(lambda item: item[1], products)
+print(x)
+print(list(x))
+
+
+filtered = filter(lambda item: item[1] > 10, products)
+print(list(filtered))
+
+
+"""
+    - Comprehension
+"""
+
