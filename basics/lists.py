@@ -167,3 +167,19 @@ print(without_parenthesis)
 
 if 6 in concat_tuple:
     print("yes it exists")
+
+# Swap values
+
+a = 10
+b = 20
+
+temp = a
+a = b
+b = temp
+
+print(a, b)
+
+# we can swap very easily in python by using tuples
+
+a, b = b, a
+print(a, b)
