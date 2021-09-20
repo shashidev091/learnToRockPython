@@ -1,7 +1,11 @@
 # Classes in python
 class Point:
     def draw(self):
-        print("draw")
+        apple = "apple"
+        self.print_something(apple)
+
+    def print_something(self, a):
+        return "Yahoo" + a
 
 
 point = Point()
@@ -58,4 +62,76 @@ print(factory.x, factory.y)
 
 """
     - magic methods
+    - they are called automatically by python compiler
 """
+
+
+class MagicMethods:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def __str__(self):
+        return f"({self.a}, {self.b})"
+
+    def __eq__(self, other):
+        return self.a == other.a and self.b == other.b
+
+    def __gt__(self, other):
+        return self.a > other.a and self.b > other.b
+
+    def __add__(self, other):
+        return MagicMethods(self.a + other.a, self.b + other.b)
+
+
+magic = MagicMethods(4, 5)
+others = MagicMethods(4, 5)
+other_gt = MagicMethods(5, 6)
+print(str(magic))
+print(magic)
+
+print(magic == others)
+print(other_gt > others)
+
+
+"""
+    - Performing arithmetic operations using magic functions
+"""
+
+combined = others + other_gt
+print(combined.b)
+
+
+"""
+    - Making custom containers
+"""
+
+
+class TagCloud:
+    def __init__(self):
+        self.__tags = {}
+
+    def add(self, tag):
+        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+
+    def __getitem__(self, tag):
+        return self.__tags.get(tag.lower(), 0)
+
+    def __setitem__(self, tag, count):
+        self.__tags[tag.lower()] = count
+
+    def __len__(self):
+        return len(self.__tags)
+
+    def __iter__(self):
+        return iter(self.__tags)
+
+
+cloud = TagCloud()
+cloud.add("python")
+cloud.add("python")
+cloud.add("mango")
+
+print(len(cloud))
+
+
