@@ -134,4 +134,11 @@ cloud.add("mango")
 
 print(len(cloud))
 
+"""
+    - all the classes have __dict__
+    - it holds all the attributes of the class
+    - Python does not have concept of private members
+"""
 
+# print(cloud.__dict__)
+# print(cloud._TagCloud__tags)
