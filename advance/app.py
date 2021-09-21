@@ -142,3 +142,30 @@ print(len(cloud))
 
 # print(cloud.__dict__)
 # print(cloud._TagCloud__tags)
+
+
+"""
+    - properties
+    - how can you make your class level variables non negative
+"""
+
+
+class PropertiesClass:
+    def __init__(self):
+        self.price = 0
+
+    @property
+    def price(self):
+        return self.price
+
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot be negative.")
+        self.price = value
+
+
+propertyClass = PropertiesClass
+print(propertyClass.price)
+propertyClass.price = 20
+print(propertyClass.price)
