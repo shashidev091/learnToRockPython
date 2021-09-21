@@ -151,21 +151,65 @@ print(len(cloud))
 
 
 class PropertiesClass:
-    def __init__(self):
-        self.price = 0
+    def __init__(self, value):
+        self.price = value
 
     @property
     def price(self):
-        return self.price
+        return self.__price
 
     @price.setter
     def price(self, value):
         if value < 0:
             raise ValueError("Price cannot be negative.")
-        self.price = value
+        self.__price = value
 
 
-propertyClass = PropertiesClass
+propertyClass = PropertiesClass(10)
 print(propertyClass.price)
-propertyClass.price = 20
+# propertyClass.price = 20
 print(propertyClass.price)
+
+
+"""
+    * Inheritance
+    * overloading
+"""
+
+
+class Animal:
+    def __init__(self):
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+
+class Mammal(Animal):
+    def __init__(self):
+        super().__init__()
+        self.weight = 10
+
+    def walk(self):
+        print("walk")
+
+
+class Fish(Animal):
+    def swim(self):
+        print("swim")
+
+
+mammal = Mammal()
+mammal.eat()
+mammal.walk()
+print(mammal.age)
+
+
+"""
+    - Useful builtin functions
+    - object call is parent of all classes
+"""
+
+print(isinstance(mammal, Animal))
+print(isinstance(mammal, object))
+print(issubclass(Mammal, object))
