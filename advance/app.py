@@ -1,7 +1,7 @@
 # Classes in python
 from abc import ABC, abstractmethod
 
-from sales import calc_tax, calc_shipping
+from ecommerce.sales import calc_tax, calc_shipping, my_sys_path
 
 
 class Point:
@@ -276,4 +276,8 @@ main_class.print_method()
 
 calc_tax()
 calc_shipping()
+my_sys_path()
 
+"""
+    -dir(module_name) = returns the all magic functions
+"""
