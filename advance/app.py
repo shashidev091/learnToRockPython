@@ -219,6 +219,7 @@ print(issubclass(Mammal, object))
 
 """
     - Abstract class
+    - Only private variables should have getter and setters
 """
 
 
