@@ -1,14 +1,18 @@
 # Classes in python
 from abc import ABC, abstractmethod
 
+from sales import calc_tax, calc_shipping
+
 
 class Point:
+    def __init__(self):
+        self.apple = "apple"
+
     def draw(self):
-        apple = "apple"
-        self.print_something(apple)
+        self.print_something(self.apple)
 
     def print_something(self, a):
-        return "Yahoo" + a
+        return self.apple + a
 
 
 point = Point()
@@ -96,14 +100,12 @@ print(magic)
 print(magic == others)
 print(other_gt > others)
 
-
 """
     - Performing arithmetic operations using magic functions
 """
 
 combined = others + other_gt
 print(combined.b)
-
 
 """
     - Making custom containers
@@ -173,7 +175,6 @@ print(propertyClass.price)
 propertyClass.price = 20
 print(propertyClass.price)
 
-
 """
     * Inheritance
     * overloading
@@ -206,7 +207,6 @@ mammal = Mammal()
 mammal.eat()
 mammal.walk()
 print(mammal.age)
-
 
 """
     - Useful builtin functions
@@ -259,3 +259,21 @@ main_class = MainClass()
 main_class.name = "Shashi"
 main_class.email = "test@mail.com"
 main_class.print_method()
+
+"""
+    - polymorphism
+    - poly means many and morphism means many
+"""
+
+"""
+    - modules 
+    - you can import a module by using from keyword for example
+    # from sales import *
+        or
+    # import sales
+    after that you can access by . operator
+"""
+
+calc_tax()
+calc_shipping()
+
