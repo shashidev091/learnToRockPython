@@ -1,4 +1,7 @@
 # Classes in python
+from abc import ABC, abstractmethod
+
+
 class Point:
     def draw(self):
         apple = "apple"
@@ -167,7 +170,7 @@ class PropertiesClass:
 
 propertyClass = PropertiesClass(10)
 print(propertyClass.price)
-# propertyClass.price = 20
+propertyClass.price = 20
 print(propertyClass.price)
 
 
@@ -213,3 +216,45 @@ print(mammal.age)
 print(isinstance(mammal, Animal))
 print(isinstance(mammal, object))
 print(issubclass(Mammal, object))
+
+"""
+    - Abstract class
+"""
+
+
+class AbstractClass(ABC):
+    @abstractmethod
+    def print_method(self):
+        pass
+
+
+class MainClass(AbstractClass):
+    def __init__(self):
+        self.__name = ""
+        self.__email = ""
+
+    def print_method(self):
+        print(self.__name)
+        print(self.__email)
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        self.__name = name
+
+    @property
+    def email(self):
+        return self.__email
+
+    @email.setter
+    def email(self, email):
+        self.__email = email
+
+
+main_class = MainClass()
+main_class.name = "Shashi"
+main_class.email = "test@mail.com"
+main_class.print_method()
