@@ -75,3 +75,12 @@ print(ctime(path.stat().st_ctime))
 #            file_name      mode
 # then you have to close it too
 # and this all tasks is handled by the read_text()
+
+
+"""
+    - Same as reading the files we have writing too
+    - path.write_text()
+    - path.write_bytes()
+    - we can do all kinds of tasks with this files but however for copying its not that good
+"""
+
