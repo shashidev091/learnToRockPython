@@ -279,5 +279,5 @@ calc_shipping()
 my_sys_path()
 
 """
-    -dir(module_name) = returns the all magic functions
+    - dir(module_name) = returns the all magic functions
 """
