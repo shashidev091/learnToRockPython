@@ -1,6 +1,8 @@
 """
     - building a guessing game
 """
+import sys
+import time
 from random import randint
 
 print("Game starts here")
@@ -33,3 +35,20 @@ else:
 """
     - while loops can also have else part
 """
+
+# create a car game
+# Learn about the loader below
+
+
+def spinning_cursor():
+    while True:
+        for cursor in '|/-\\':
+            yield cursor
+
+
+spinner = spinning_cursor()
+for _ in range(50):
+    sys.stdout.write(next(spinner))
+    sys.stdout.flush()
+    time.sleep(0.1)
+    sys.stdout.write('\b')
