@@ -186,7 +186,7 @@ class Animal:
         self.age = 1
 
     def eat(self):
-        print("eat" + self.age)
+        print("eat" + str(self.age))
 
 
 class Mammal(Animal):
@@ -195,12 +195,12 @@ class Mammal(Animal):
         self.weight = 10
 
     def walk(self):
-        print("walk" + self.age)
+        print("walk" + str(self.age))
 
 
 class Fish(Animal):
     def swim(self):
-        print("swim" + self.age)
+        print("swim" + str(self.age))
 
 
 mammal = Mammal()
