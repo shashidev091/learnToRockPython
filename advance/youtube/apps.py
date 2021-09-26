@@ -63,7 +63,7 @@ engine_on = False
 while True:
     command = input("> ").lower()
     if command == 'start':
-        if not engine_on and previous_command != 'start':
+        if not engine_on:
             engine_on = True
             print('engine started')
         else:
@@ -73,11 +73,11 @@ while True:
     elif command == 'back' and engine_on:
         print("Car is going reverse")
     elif command == 'stop':
-        if previous_command == command or not engine_on:
+        if not engine_on:
             print('car is already stopped.')
-        elif engine_on:
-            print("Car stopped moving")
+        else:
             engine_on = False
+            print("Car stopped moving")
     elif command == 'quit':
         print("You existed from the game.")
         break
