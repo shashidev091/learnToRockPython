@@ -32,3 +32,17 @@ for row in range(1, sheet.max_row + 1):
     updated_cell.value = new_values
 
 wb.save('test.xlsx')
+
+
+def process_workbook(filename):
+    workbook = xl.load_workbook(filename)
+    sheets = workbook['Sheet1']
+
+    for rows in range(sheets.max_row + 1):
+        sheet_cell = sheets.cell(rows, 5)
+        updated_price = sheet_cell.value * 20 / 100
+        updated_price_cell = sheets.cell(row, max_cols)
+        updated_price_cell.value = updated_price
+
+    workbook.save('anotherFile.xlsx')
+
