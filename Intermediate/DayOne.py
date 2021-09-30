@@ -30,6 +30,14 @@ for row in range(5):
 
 
 for row in range(5):
-    for col in range(row):
-        print(end='*')
+    for col in range(1, row + 1):
+        print(end=str(col))
     print('')
+
+print('\n')
+rang = 5
+for row in range(rang):
+    for col in range(1, rang):
+        print(end=str(col))
+    print('')
+    rang = rang - 1
