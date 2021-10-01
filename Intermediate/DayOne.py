@@ -41,3 +41,48 @@ for row in range(rang):
         print(end=str(col))
     print('')
     rang = rang - 1
+
+
+"""
+    1
+    1 2
+    1 2 3
+    1 2 3 4 
+    1 2 3 4 5
+"""
+
+for row in range(1, 6):
+    for col in range(1, row + 1):
+        print(col, end=' ')
+    print()
+
+"""
+    *
+    * *
+    * * *
+    * * 
+    *
+"""
+
+for row in range(5):
+    print('* ' * row)
+for row in range(5):
+    print('* ' * (5 - row))
+
+# for row in range(1, 6):
+#     for col in range(row):
+#         print('*', end=' ')
+#     print()
+# for row in range(1, 6):
+#     for col in range(5 - row):
+#         print('*', end=' ')
+#     print()
+
+for row in range(1, 12):
+    if row < 11/2:
+        for col in range(row):
+            print('*', end=' ')
+    else:
+        for col in range(12 - row):
+            print('*', end=' ')
+    print()
