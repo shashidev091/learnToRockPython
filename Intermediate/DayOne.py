@@ -91,13 +91,13 @@ for row in range(1, 12):
     - Find min and max;
 """
 
-input_array = [1, 5, 7, 4, 90, 33, 6, 35, 0]
+input_array = [1, 5, 7, 4, 90, 33, 0, 35, 85]
 min_val = input_array[0]
 max_val = input_array[0]
 for index, item in enumerate(input_array):
     if max_val < input_array[index]:
         max_val = item
-    else:
+    if min_val > input_array[index]:
         min_val = item
 
 print(min_val, max_val)
