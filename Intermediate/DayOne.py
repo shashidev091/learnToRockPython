@@ -86,3 +86,18 @@ for row in range(1, 12):
         for col in range(12 - row):
             print('*', end=' ')
     print()
+
+"""
+    - Find min and max;
+"""
+
+input_array = [1, 5, 7, 4, 90, 33, 6, 35, 0]
+min_val = input_array[0]
+max_val = input_array[0]
+for index, item in enumerate(input_array):
+    if max_val < input_array[index]:
+        max_val = item
+    else:
+        min_val = item
+
+print(min_val, max_val)
