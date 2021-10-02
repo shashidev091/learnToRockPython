@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-    <style>
-        body {
-            background-color: #61668f;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            opacity: 0.75;
-        }
-    </style>
-</head>
-<body>
-    <h1>Home Page</h1>
+{% extends "layout.html" %}
+{% block content %}
+<div class="home-head d-flex justify-content-center">
+    <h1><u>Home Page</u></h1>
+</div>
+<div class="home-content d-flex flex-column justify-content-center align-items-center">
     <div>
         {% for post in posts %}
-            <h4>{{ post.title }}</h4>
-            <p>By {{ post.author }} on {{ post.date_posted }}</p>
-            <p>{{ post.content }}</p>
+        <h4>{{ post.title }}</h4>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
         {% endfor %}
     </div>
-</body>
-</html>
+</div>
+{% endblock content %}
