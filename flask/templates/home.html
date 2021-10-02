@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="home-head d-flex justify-content-center">
-    <h1><u>Home Page</u></h1>
-</div>
-<div class="home-content d-flex flex-column justify-content-center align-items-center">
+<!--<div class="home-head d-flex justify-content-center">-->
+<!--    <h1><u>Home Page</u></h1>-->
+<!--</div>-->
+<div class="home-content d-flex flex-column p-4">
     <div>
         {% for post in posts %}
-        <h4>{{ post.title }}</h4>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
+        <div class="card bg-info mb-2">
+            <div class="card-body">
+                <h4>{{ post.title }}</h4>
+                <p>By {{ post.author }} on {{ post.date_posted }}</p>
+                <p>{{ post.content }}</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
 </div>
