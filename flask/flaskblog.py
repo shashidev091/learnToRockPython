@@ -69,7 +69,7 @@ def about_page():
     return render_template("about.html", title="About page")
 
 
-@app.route("/register", methods=['Post'])
+@app.route("/register", methods=['Get', 'Post'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
