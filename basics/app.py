@@ -5,7 +5,7 @@ print('*' * 12)
 
 # formated stirng
 
-strs = f"Shashi is learning pyhton"
+strs = f"Shashi is learning python"
 
 print(strs)
 print(len(strs))
