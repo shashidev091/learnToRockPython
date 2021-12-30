@@ -27,9 +27,9 @@ def convert_lbs_to_pound():
 
 something = '''I love this world and the world loves me'''
 
-print(len(something))  # length function
-print(something.replace('world', 'world'.upper()))
-print(something.find('world'))
+# print(len(something))  # length function
+# print(something.replace('world', 'world'.upper()))
+# print(something.find('world'))
 
 # x = 10
 # x += 1
@@ -40,11 +40,11 @@ print(something.find('world'))
 '''
 
 x = 234.34
-print(abs(-2.9), 'returns only positive values')
-print(round(2.9), 'returns the round off of given number')
-
-print(math.ceil(2.9), 'will return the next possible value')
-print(math.floor(2.9), 'will return the least value')
+# print(abs(-2.9), 'returns only positive values')
+# print(round(2.9), 'returns the round off of given number')
+#
+# print(math.ceil(2.9), 'will return the next possible value')
+# print(math.floor(2.9), 'will return the least value')
 
 '''
     Problem number => 3
@@ -84,12 +84,85 @@ img_prices = [10, 20, 30]
 totals = 0
 for item in img_prices:
     totals += item
-print(totals)
+# print(totals)
 
 
 pattern = [5, 2, 5, 2, 2]
 
-for ele in pattern:
-    print('#' * ele)
+# for ele in pattern:
+#   print('#' * ele)
+
+lists = ['John', 'Bob', 'Sarah']
+
+# print(lists)
+lists[0] = 'Shashi'
+
+
+# print(lists)
+
+
+def largest_number(list_of_numbers):
+    maximum = list_of_numbers[0]
+    minimum = list_of_numbers[0]
+    for element in list_of_numbers:
+        if minimum > element:
+            minimum = element
+        elif maximum < element:
+            maximum = element
+
+    print(f'maximum => {maximum} ', f' minimum => {minimum}')
+
+
+arrays = [1, 4, 6, 23, 7, 122, 7788, 2, 0]
+# print(arrays[0])
+# largest_number(arrays)
+
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for row in matrix:
+    rows = ''
+    for ele in row:
+        rows += str(ele) + ' '
+
+    print(rows)
+
+
+def sort_list():
+    # global arrays
+    for i in range(len(arrays)):
+        for j in range(i + 1, len(arrays)):
+            if arrays[i] > arrays[j]:
+                # now swap the elements
+                temp = arrays[i]
+                arrays[i] = arrays[j]
+                arrays[j] = temp
+
+    print(arrays)
+
+
+# sort_list()
+
+# Remove duplicates from the list
+
+
+def remove_duplicates(list_numbers):
+    temp_list = []
+    for i in list_numbers:
+        if i not in temp_list:
+            temp_list.append(i)
+    print(list_numbers)
+    print(temp_list)
+
+
+# remove_duplicates([1, 33, 6, 33, 4, 7, 3, 1, 99, 3, 5, 4])
+
+'''
+    # Tuples => are immutables
+'''
 
 
