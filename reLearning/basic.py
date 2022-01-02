@@ -129,7 +129,7 @@ for row in matrix:
     for ele in row:
         rows += str(ele) + ' '
 
-    print(rows)
+    # print(rows)
 
 
 def sort_list():
@@ -142,7 +142,7 @@ def sort_list():
                 arrays[i] = arrays[j]
                 arrays[j] = temp
 
-    print(arrays)
+    # print(arrays)
 
 
 # sort_list()
@@ -164,5 +164,37 @@ def remove_duplicates(list_numbers):
 '''
     # Tuples => are immutables
 '''
+
+# print('Hello ' + input('What is your name... \n'))
+
+# print(len('Angela'))
+
+
+def generate_band_name():
+    city = input("What's name of the city you grew up in...???\n")
+    pet_name = input("What's your pet's name\n")
+
+    print(f"Your band name could be {city} {pet_name}")
+
+
+# generate_band_name()
+
+# find number of digits avalable
+# print(len(str(2342342342)))
+# print('Hello'[-1])
+
+
+def bmi_calculator():
+    weight = input('Enter your weight \n')
+    height = input('Enter your height \n')
+
+    print(f"Your BMI is {round(int(weight) / (float(height) ** 2))}")
+
+
+# bmi_calculator()
+
+
+
+
 
 
