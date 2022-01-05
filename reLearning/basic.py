@@ -43,7 +43,7 @@ something = '''I love this world and the world loves me'''
 x = 234.34
 # print(abs(-2.9), 'returns only positive values')
 # print(round(2.9), 'returns the round off of given number')
-#
+ceil = math.ceil(2.9)
 # print(math.ceil(2.9), 'will return the next possible value')
 # print(math.floor(2.9), 'will return the least value')
 
@@ -55,6 +55,7 @@ x = 234.34
 def down_payment_required():
     price = 1000000
     credit = input('Enter you credit score\n')
+    print(ceil)
     if int(credit) > 750:
         down_payment = 0.1 * price
         print(f'you need to pay 10% down payment')
@@ -181,7 +182,7 @@ def generate_band_name():
 
 # generate_band_name()
 
-# find number of digits avalable
+# find number of digits available
 # print(len(str(2342342342)))
 # print('Hello'[-1])
 
