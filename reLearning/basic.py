@@ -1,4 +1,5 @@
 import math
+from datetime import date
 
 
 def add_new_patient():
@@ -165,6 +166,7 @@ def remove_duplicates(list_numbers):
     # Tuples => are immutables
 '''
 
+
 # print('Hello ' + input('What is your name... \n'))
 
 # print(len('Angela'))
@@ -194,7 +196,82 @@ def bmi_calculator():
 # bmi_calculator()
 
 
+def calculate_no_of_days_remaining():
+    dob = input('Enter your date of birth in dd/mm/yy format \n')
+    extract = dob.split('/')
+    list_of_date = list(map(int, extract))
+
+    year = date.today().year
+    month = date.today().month
+    day = date.today().day
+
+    print(f'{str(day).zfill(2)}/{str(month).zfill(2)}/{year}')
+
+    remaining = date(list_of_date[2] + 90, list_of_date[1], list_of_date[0]) - date(year, month, day)
+    print(remaining)
 
 
+# calculate_no_of_days_remaining()
+
+'''
+    Tip calculator app
+'''
 
 
+def tip_calculator():
+    total_amount = float(input("Enter the total bill of the order \n"))
+    tip_percentage_you_want_to_pay = int(input("Enter the % of the tip you wanna pay.. \n"))
+    total_no_of_people = int(input("Total no of people you want to split your bill into \n"))
+
+    if tip_percentage_you_want_to_pay < 10:
+        print("Tip cannot be less than 10% ")
+        tip_calculator()
+    else:
+        percentage_amount = total_amount / 100 * tip_percentage_you_want_to_pay
+        total_bill = total_amount + percentage_amount
+        for_each_person = total_bill / total_no_of_people
+
+        print(f'The total bill amount is {total_bill}.\nEach person should pay ${":.2f".format(for_each_person)} 🥸')
+        print(f"The rounded amount will be ${round(for_each_person, 2)} each. 🥸")
+
+
+# tip_calculator()
+
+
+'''
+    Check odd or even
+'''
+
+
+def check_even_or_odd():
+    inp = int(input("Enter the number to find out its even or odd \n"))
+
+    if inp % 2 == 0:
+        print(f'{inp} is an even number')
+    else:
+        print(f'{inp} is an odd number')
+
+
+# check_even_or_odd()
+
+
+'''
+    roller coaster ticket counter
+'''
+
+
+def book_ticket():
+    height = int(input("Enter your height in centimeters \n"))
+
+    if height < 120:
+        print('You are not eligible to ride this roller coaster...')
+    else:
+        age = int(input('Enter your age \n'))
+
+        if age < 18:
+            print('You have to pay $7')
+        else:
+            print('you have to pay $12')
+
+
+book_ticket()
