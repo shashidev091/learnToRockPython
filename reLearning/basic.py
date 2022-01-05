@@ -268,10 +268,30 @@ def book_ticket():
     else:
         age = int(input('Enter your age \n'))
 
-        if age < 18:
+        if age < 12:
+            print('You have to pay $5')
+        elif 12 <= age < 18:
             print('You have to pay $7')
         else:
             print('you have to pay $12')
 
 
-book_ticket()
+# book_ticket()
+
+
+def is_leap_year():
+    year = int(input("Enter the year \n"))
+
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                print(f"{year} is a leap year")
+            else:
+                print(f"{year} this is not a leap year")
+        else:
+            print(f"{year} is a leap year")
+    else:
+        print(f"{year} this is not a leap year")
+
+
+# is_leap_year()
