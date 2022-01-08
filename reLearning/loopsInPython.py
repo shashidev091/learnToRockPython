@@ -62,3 +62,14 @@ def fizzbuzz():
 '''
     - Make a password generator
 '''
+
+
+'''
+    - While loop
+'''
+
+# value = 10
+# while value > 1:
+#     value -= 1
+#     print(f'This is amazing loop {value}')
+#
