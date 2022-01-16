@@ -1,4 +1,7 @@
+import random
+
 list_fruits = ['🍎', '🥭', '🍊', '🍌']
+
 
 # for fruit in list_fruits:
 #     print(fruit)
@@ -63,7 +66,6 @@ def fizzbuzz():
     - Make a password generator
 '''
 
-
 '''
     - While loop
 '''
@@ -73,3 +75,97 @@ def fizzbuzz():
 #     value -= 1
 #     print(f'This is amazing loop {value}')
 #
+
+
+'''
+    - Hangman game
+'''
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+
+def hangman(word_list):
+    chosen_word = random.choice(word_list)
+
+    # print('-' * len(chosen_word))
+
+    display_list = []
+    word_length = len(chosen_word)
+    for index in range(word_length):
+        display_list += '_'
+    print(display_list)
+    count = len(stages) - 1
+
+    while '_' in display_list:
+        guess_word = input('Enter your letter \n').lower()
+
+        for index in range(word_length):
+            if chosen_word[index] == guess_word:
+                display_list[index] = guess_word
+
+        print(display_list)
+        if guess_word not in chosen_word:
+            count -= 1
+        if count == 0:
+            print('You Lost ===>>>')
+            break
+        print(stages[count])
+
+
+words_list = ["dog", "camel", "tiger"]
+hangman(words_list)
