@@ -7,12 +7,14 @@
 def encode_msg():
     alphabets = list('abcdefghijklmnopqrstuvwxyz')
 
-    cypher_type = input("Enter encode or decode\n")
+    cypher_type = input("Enter encode or decode\n").strip()
     number = int(input('Enter no. to split \n'))
     msg = input('Input message \n')
 
     if cypher_type == 'encode':
         for index, item in enumerate(msg):
+            if item == ' ':
+                continue
             idx = alphabets.index(item) + number
             if idx > len(alphabets):
                 idx -= 26
