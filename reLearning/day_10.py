@@ -23,8 +23,30 @@ def find_frequency(input_text):
     print(dictionaries_character)
 
 
-find_frequency("This world is awsome")
+# find_frequency("This world is awsome")
 
-for item in dictionaries_character:
-    print(f'{item} => {dictionaries_character}')
+# for item in dictionaries_character:
+#     print(f'{item} => {dictionaries_character}')
 
+all_bid = {}
+index = 0
+
+
+def find_biggest_bid():
+    name = input('Enter your name \n')
+    bid_amount = int(input('Enter the bid amount \n'))
+    bid_list = [name, bid_amount]
+    global index
+    index += 1
+    all_bid[f'Person {index}'] = bid_list
+    print(all_bid)
+
+    isMoreEntry = input('Do you want to enter more bids')
+
+    if isMoreEntry == 'yes':
+        find_biggest_bid()
+    else:
+        print(all_bid)
+
+
+find_biggest_bid()
