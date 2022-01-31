@@ -1,6 +1,5 @@
 from random import randint
 
-
 cards = {
     "2": 2,
     "3": 3,
@@ -14,9 +13,8 @@ cards = {
     "J": 10,
     "Q": 10,
     "K": 10,
-    "A": [11, 1]
+    "A": 11,
 }
-
 
 """
 ====> Todo for today's evening
@@ -38,10 +36,35 @@ cards = {
 
 def black_jack():
     card_keys_list = list(cards.keys())
-    card1 = cards[card_keys_list[randint(1, 13)]]
-    card2 = cards[card_keys_list[randint(1, 13)]]
-    default_cards = [card1, card2]
-    print(default_cards)
+    your_cards_list, dealers_cards_list = [], []
+
+    keep_dealing = True
+
+    while keep_dealing:
+        your_cards_list.append(cards[card_keys_list[randint(0, 12)]])
+        dealers_cards_list.append(cards[card_keys_list[randint(0, 12)]])
+
+        print('dealer', dealers_cards_list)
+        print('user', your_cards_list)
+
+        want_next_card = input('Do you want the next card press \'Y\' or to quit \'N\' \n').upper()
+
+        if want_next_card == 'N' \
+                or sum(your_cards_list) > 21 \
+                or len(your_cards_list) == 3:
+            keep_dealing = False
+
+        if want_next_card == 'N' \
+                or sum(dealers_cards_list) > 21 \
+                or len(dealers_cards_list) == 3:
+            keep_dealing = False
+
+    if sum(your_cards_list) > 21 or sum(your_cards_list) < sum(dealers_cards_list):
+        print('You lost')
+    elif sum(dealers_cards_list) > 21:
+        print('you won')
+    else:
+        print('You won')
 
 
 black_jack()
