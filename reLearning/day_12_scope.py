@@ -6,14 +6,14 @@ from random import randint
 external_variable = 10
 
 
-def function():
-    external_variable = 20
-    print(external_variable)
+# def function():
+#     external_variable = 20
+#     print(external_variable)
 
 
-function()
+# function()
 
-print(external_variable)
+# print(external_variable)
 
 """
     - exercise
@@ -69,3 +69,43 @@ def fizzbuzz(numbers):
 # fizzbuzz([1, 5, 8, 99, 33, 65, 15])
 
 
+"""
+    - Coffee machine
+"""
+
+coffee_type = {
+    "Expresso": {
+        "water": 50,
+        "coffee": 18,
+        "milk": 0
+    },
+    "Latte": {
+        "water": 200,
+        "coffee": 24,
+        "milk": 150
+    },
+    "Cappuccino": {
+        "water": 250,
+        "coffee": 24,
+        'milk': 100
+    }
+}
+
+coffee_machine_inventory = {
+    "milk": 300,
+    "water": 200,
+    "coffee": 100
+}
+
+
+def sell_coffee():
+    print("""
+    Welcome to the coffee shop
+            1- Expresso
+            2- Latte
+            3- Cappuccino'
+    Please select from the list above
+    """)
+
+    choice_of_coffee = int(input('Choose the coffee from the list above\n'))
+    type_of_money = input("How are you going to pay")
