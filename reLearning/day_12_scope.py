@@ -29,7 +29,8 @@ def guess_game():
     print(f'You have {lives_left} attempts left!!!')
     print(guess_number)
     if lives_left < 3:
-        print(f'\033[93mHINT: The number is between {guess_number - randint(1, 10) if guess_number > 10 else guess_number - 1}'
+        print(f'\033[93mHINT: The number is between '
+              f'{guess_number - randint(1, 10) if guess_number > 10 else guess_number - 1} '
               f' and {guess_number + randint(1, 10) if guess_number < 100 else guess_number + 1}')
 
     lives_left -= 1
@@ -46,4 +47,25 @@ def guess_game():
         print('You lost')
 
 
-guess_game()
+# guess_game()
+
+"""
+    - Debug fizz buzz
+"""
+
+
+def fizzbuzz(numbers):
+    for number in numbers:
+        if number % 3 == 0 and number % 5 == 0:
+            print("FizzBuzz")
+        elif number % 3 == 0:
+            print("Fizz")
+        elif number % 5 == 0:
+            print("Buzz")
+        else:
+            print(number)
+
+
+# fizzbuzz([1, 5, 8, 99, 33, 65, 15])
+
+
