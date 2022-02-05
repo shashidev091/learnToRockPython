@@ -1,10 +1,10 @@
 from random import randint
+
 """
     - Python does not support block scope
     - use global scope for constants according to best practices
 """
 external_variable = 10
-
 
 # def function():
 #     external_variable = 20
@@ -73,25 +73,34 @@ def fizzbuzz(numbers):
     - Coffee machine
 """
 
-coffee_type = {
+MENU = {
     "Expresso": {
-        "water": 50,
-        "coffee": 18,
-        "milk": 0
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+            "milk": 0
+        },
+        "cost": 1.5
     },
     "Latte": {
-        "water": 200,
-        "coffee": 24,
-        "milk": 150
+        "ingredients": {
+            "water": 200,
+            "coffee": 24,
+            "milk": 150
+        },
+        "cost": 2.5
     },
     "Cappuccino": {
-        "water": 250,
-        "coffee": 24,
-        'milk': 100
+        "ingredients": {
+            "water": 250,
+            "coffee": 24,
+            'milk': 100
+        },
+        "cost": 3.0
     }
 }
 
-coffee_machine_inventory = {
+resources = {
     "milk": 300,
     "water": 200,
     "coffee": 100
@@ -109,3 +118,24 @@ def sell_coffee():
 
     choice_of_coffee = int(input('Choose the coffee from the list above\n'))
     type_of_money = input("How are you going to pay")
+
+
+is_on = True
+
+
+def coffee_machine():
+    global is_on
+    while is_on:
+        choice = input('What would you like? (expresso/latte/cappuccino): \n').lower()
+        if choice == 'off':
+            is_on = False
+            print('Machine off')
+        elif choice == 'report':
+            print(f"milk: \t {resources['milk']}")
+            print(f"Water: \t {resources['water']}")
+            print(f"coffee:  {resources['coffee']}")
+        elif choice == '':
+            print('You have to enter a valid ')
+
+
+coffee_machine()
