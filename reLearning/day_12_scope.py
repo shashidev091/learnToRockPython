@@ -121,21 +121,58 @@ def sell_coffee():
 
 
 is_on = True
+profit = 0
+
+
+def is_resource_sufficient(order_ingredients):
+    """Return True when order can be made, False ingredients are insufficient. """
+    for ingredient in order_ingredients:
+        if order_ingredients[ingredient] >= resources[ingredient]:
+            print(f"Sorry there is not enough {ingredient}")
+            return False
+    return True
+
+
+def money_calculated(money):
+    global profit
+    is_done = True
+    print("money 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000")
+    money_received = 0
+    while is_done:
+        choose_currency = int(input("Enter you currency \n"))
+        if choose_currency == 'done':
+            is_done = False
+        else:
+            money_received += choose_currency
+
+    if money > money_received:
+        return False
+    return_money = money_received - money
+    print(f"here is your change {return_money}")
+    profit += money
+    return True
 
 
 def coffee_machine():
     global is_on
+    print("Coffee machine started ☕️")
     while is_on:
         choice = input('What would you like? (expresso/latte/cappuccino): \n').lower()
         if choice == 'off':
             is_on = False
             print('Machine off')
         elif choice == 'report':
-            print(f"milk: \t {resources['milk']}")
-            print(f"Water: \t {resources['water']}")
-            print(f"coffee:  {resources['coffee']}")
+            print(f"milk: \t {resources['milk']}l")
+            print(f"Water: \t {resources['water']}l")
+            print(f"coffee:  {resources['coffee']}l")
+            print(f"Money: \t {profit}$")
         elif choice == '':
             print('You have to enter a valid ')
+        else:
+            drink = MENU[choice.title()]
+            if is_resource_sufficient(drink["ingredients"]):
+                money_calculated(drink['cost'])
+                print(f"Your order of {choice.title()} is taken")
 
 
 coffee_machine()
