@@ -148,6 +148,7 @@ def sort_list():
 
 
 # sort_list()
+# print(arrays)
 
 # Remove duplicates from the list
 
