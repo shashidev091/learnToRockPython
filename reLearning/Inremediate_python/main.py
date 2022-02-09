@@ -39,6 +39,33 @@ def generic_shape(no_sides):
         my_turtle.right(angle)
 
 
-for shape_side_no in range(3, 11):
+# for shape_side_no in range(3, 11):
+#     my_turtle.color(random.choice(colors))
+#     generic_shape(shape_side_no)
+
+direction = [0, 90, 180, 270]
+my_turtle.speed("fast")
+
+
+def random_color():
+    r = float(random.randint(0, 255))
+    g = float(random.randint(0, 255))
+    b = float(random.randint(0, 255))
+    rgb = (r, g, b)
+    return rgb
+
+
+def random_walk():
+    print(random_color())
+    my_turtle.pensize(10)
     my_turtle.color(random.choice(colors))
-    generic_shape(shape_side_no)
+    my_turtle.forward(30)
+    my_turtle.setheading(random.choice(direction))
+
+
+# for _ in range(100):
+#     random_walk()
+
+
+for _ in range(100):
+    my_turtle.circle(100)
