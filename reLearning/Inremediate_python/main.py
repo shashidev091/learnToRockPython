@@ -3,6 +3,7 @@ from turtle import Turtle, Screen
 
 my_turtle = Turtle()
 my_turtle.shape('turtle')
+my_turtle_screen = Screen()
 
 # temp_turtle = Turtle()
 
@@ -66,6 +67,18 @@ def random_walk():
 # for _ in range(100):
 #     random_walk()
 
+my_turtle.speed("fastest")
+# for _ in range(50):
+#     my_turtle.circle(100)
+#     my_turtle.forward(10)
+#     my_turtle.right(10)
+#
+# my_turtle_screen.exitonclick()
 
-for _ in range(100):
+
+for _ in range(int(360 / 10)):
+    my_turtle.color(random.choice(colors))
     my_turtle.circle(100)
+    my_turtle.setheading(my_turtle.heading() + 10)
+
+my_turtle_screen.exitonclick()
