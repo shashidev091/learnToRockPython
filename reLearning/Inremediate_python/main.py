@@ -76,9 +76,10 @@ my_turtle.speed("fastest")
 # my_turtle_screen.exitonclick()
 
 
-for _ in range(int(360 / 10)):
-    my_turtle.color(random.choice(colors))
-    my_turtle.circle(100)
-    my_turtle.setheading(my_turtle.heading() + 10)
+# for _ in range(int(360 / 10)):
+#     my_turtle.color(random.choice(colors))
+#     my_turtle.circle(100)
+#     my_turtle.setheading(my_turtle.heading() + 10)
+#
+# my_turtle_screen.exitonclick()
 
-my_turtle_screen.exitonclick()
