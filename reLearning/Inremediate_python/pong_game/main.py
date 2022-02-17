@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 pong_screen = Screen()
 pong_screen.setup(width=800, height=600)
@@ -45,7 +46,7 @@ while game_is_on:
         ball.bounce_x()
 
     if ball.xcor() > 360 or ball.xcor() < -360:
-        close_app()
-
+        # close_app()
+        ball.reset_position()
 
 pong_screen.exitonclick()
