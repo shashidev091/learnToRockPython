@@ -28,5 +28,18 @@ with open('text_file.txt', mode='a') as file:
     file.write(f'\n \t\t I am {author}, and I am very nice guy loved by everyone')
 
 # Challenge
+# with open('testFile.txt', mode='w') as file:
+#     file.write('Hello Shashi')
+
+
+"""
+    - Challenge to replace the name to the users you want from a text file
+"""
+
 with open('testFile.txt', mode='w') as file:
-    file.write('Hello Shashi')
+    content = file.read()
+    content.replace('[name]', "")
+
+with open('./names.txt') as file:
+    content = file.readlines()
+    print(content)
