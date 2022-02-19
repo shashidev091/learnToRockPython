@@ -36,10 +36,31 @@ with open('text_file.txt', mode='a') as file:
     - Challenge to replace the name to the users you want from a text file
 """
 
-with open('testFile.txt', mode='w') as file:
+with open('testFile.txt', mode='r') as file:
     content = file.read()
-    content.replace('[name]', "")
-
-with open('./names.txt') as file:
-    content = file.readlines()
     print(content)
+
+
+def write_love_letters():
+    """
+        This function writes love letters to multiple girls
+        which names are present in \n
+        names.txt file \n
+        you can add or remove any name in it before running
+    """
+    with open('./names.txt', mode='r') as files:
+        name_list = file.readlines()
+        stripped_name = []
+        for name in name_list:
+            stripped_name.append(name.strip())
+
+        with open('testFile.txt', mode='r') as letter:
+            letter_content = letter.read()
+
+        for girl_name in stripped_name:
+            new_letter = letter_content.replace('[name]', girl_name)
+            with open(f'./love_letters/{girl_name}.txt', mode='w') as love_letter:
+                love_letter.write(new_letter)
+
+
+write_love_letters()
