@@ -1,4 +1,5 @@
 import csv
+import pandas
 
 # with open('./weather_data.csv') as weather_data:
 #     data = weather_data.readlines()
@@ -14,3 +15,6 @@ with open('./weather_data.csv') as data:
         if row[1] != 'temp':
             temperatures.append(int(row[1]))
     print(temperatures)
+
+datas = pandas.read_csv('./weather_data.csv')
+print(datas['temp'])
