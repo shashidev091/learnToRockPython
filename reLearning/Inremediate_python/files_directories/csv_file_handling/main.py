@@ -18,3 +18,17 @@ with open('./weather_data.csv') as data:
 
 datas = pandas.read_csv('./weather_data.csv')
 print(datas['temp'])
+data_to_dict = datas.to_dict()
+
+temp_list = datas["temp"].to_list()
+print(sum(temp_list) / len(temp_list))
+
+print(datas["temp"].mean())
+
+print(datas["temp"].max())
+
+print(datas.temp.max())
+
+print(datas[datas.day == "Monday"])
+
+print(datas[datas.temp == datas.temp.max()])
