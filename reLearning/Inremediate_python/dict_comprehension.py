@@ -10,3 +10,4 @@ print(student_score)
 
 passed_students = {name: marks for (name, marks) in student_score.items() if marks >= 60}
 print(passed_students)
+
