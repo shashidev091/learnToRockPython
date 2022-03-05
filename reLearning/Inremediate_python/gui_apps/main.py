@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Button
+from tkinter import Tk, Label, Button, Entry
 
 window = Tk()
 
@@ -9,12 +9,16 @@ my_label = Label(text="I am Groot")
 
 def button_clicked():
     print('Button_clicked')
-    my_label["text"] = "button clicked"
+    my_label["text"] = entry.get()
 
 
 # centers the element on the screen
 my_label.pack()
 button = Button(text="Click me", command=button_clicked)
 button.pack()
+
+entry = Entry(width=10)
+entry.pack()
+
 
 window.mainloop()
