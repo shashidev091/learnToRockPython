@@ -34,6 +34,6 @@ user_input = input("Enter the word to convert to phonetic Nato\n")
 #     phonetic_converted_code.append(output_result)
 
 # print(phonetic_converted_code)
-print(
-    [{character: row.code for (index, row) in phonetic_dict.iterrows() if character in row.letter.lower()} for character
-     in user_input.lower()])
+print([{character: row.code for (index, row) in phonetic_dict.iterrows() if character in row.letter.lower()}
+      for character in user_input.lower()])
+
