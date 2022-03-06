@@ -14,11 +14,10 @@ def button_clicked():
 
 # centers the element on the screen
 my_label.pack()
+entry = Entry(width=15)
+entry.pack()
 button = Button(text="Click me", command=button_clicked)
 button.pack()
-
-entry = Entry(width=10)
-entry.pack()
 
 
 window.mainloop()
