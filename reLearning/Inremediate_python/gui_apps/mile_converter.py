@@ -2,6 +2,8 @@ from tkinter import Tk, Button, Label, Entry
 
 window = Tk()
 window.minsize(width=300, height=200)
+window.config(padx=20, pady=20)
+window.title('Miles to KM converter')
 
 
 def calculate():
