@@ -1,3 +1,4 @@
+import json
 
 facebook_posts = [
     {'Likes': 21, 'Comments': 2},
@@ -19,3 +20,19 @@ for post in facebook_posts:
         total_likes = total_likes + like
 
 print(total_likes)
+
+website = "something"
+
+
+def generate_json_file():
+    new_data = {
+            website: {
+                "name": 'Shashi',
+                "password": "jsdflkjsdfkjksljf"
+            }
+        }
+    with open('data.json', 'w') as data_file:
+        json.dump(new_data, data_file)
+
+
+generate_json_file()
