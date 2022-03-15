@@ -64,19 +64,38 @@ def submit_password():
             #     password_input.delete(0, END)
             parse_into_json(website, email, password)
 
-        messagebox.showinfo(message="details saved successfully!😊! \n and password copied to clipboard", title="Status")
+        messagebox.showinfo(message="details saved successfully!😊! \n and password copied to clipboard",
+                            title="Status")
+
+
+def search_handler():
+    website = website_input.get()
+
+    try:
+        with open('data.json', 'r') as data_file:
+            data = json.load(data_file)
+    except (FileNotFoundError, ):
+        if website in data:
+            fetched_email = data[website]['email']
+            fetched_password = data[website]['password']
+
+            messagebox.showinfo(title="found item",
+                                message=f"Email : {fetched_email} \n Password : \n {fetched_password}")
+        else:
+            messagebox.showinfo(title="Status", message=f"No info is available in the database similar to {website}")
 
 
 # required objects
 canvas = Canvas()
 image = PhotoImage(file='logo.png')
 website_label = Label(text="Website")
-website_input = Entry(width=35)
+website_input = Entry(width=21)
 email_input = Entry(width=35)
 email_label = Label(text="Email/Username")
 password_label = Label(text="Password")
 password_input = Entry(width=21)
 password_generator = Button(width=10, text='generator', command=generate_handler)
+search_button = Button(width=10, text='search', command=search_handler)
 submit_btn = Button(width=25, text="submit", command=submit_password)
 
 # organise the ui
@@ -84,7 +103,8 @@ canvas.config(width=200, height=200)
 canvas.create_image(100, 100, image=image)
 canvas.grid(row=0, column=1)
 website_label.grid(row=1, column=0)
-website_input.grid(row=1, column=1, columnspan=2)
+website_input.grid(row=1, column=1)
+search_button.grid(row=1, column=2)
 email_label.grid(row=2, column=0)
 email_input.grid(row=2, column=1, columnspan=2)
 password_label.grid(row=3, column=0)
