@@ -37,6 +37,11 @@ def parse_into_json(website, email, password):
         with open('data.json', 'w') as data_file:
             json.dump(data, data_file, indent=4)
 
+    finally:
+        website_input.delete(0, END)
+        email_input.delete(0, END)
+        password_input.delete(0, END)
+
 
 def submit_password():
     email = email_input.get()
@@ -58,9 +63,6 @@ def submit_password():
             #     email_input.delete(0, END)
             #     password_input.delete(0, END)
             parse_into_json(website, email, password)
-            website_input.delete(0, END)
-            email_input.delete(0, END)
-            password_input.delete(0, END)
 
         messagebox.showinfo(message="details saved successfully!😊! \n and password copied to clipboard", title="Status")
 
