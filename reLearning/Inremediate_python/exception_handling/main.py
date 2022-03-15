@@ -28,7 +28,7 @@ def generate_json_file():
     new_data = {
             website: {
                 "name": 'Shashi',
-                "password": "jsdflkjsdfkjksljf"
+                "password": "something"
             }
         }
     with open('data.json', 'w') as data_file:
