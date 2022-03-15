@@ -1,6 +1,7 @@
 from tkinter import Tk, Label, Button, Canvas, PhotoImage, Entry, END, messagebox
 from password_genrator import generate_random_password
 import pyperclip
+import json
 
 window = Tk()
 window.config(padx=20, pady=20)
@@ -12,6 +13,29 @@ def generate_handler():
     password_input.delete(0, END)
     password_input.insert(0, strong_password)
     pyperclip.copy(strong_password)
+
+
+def parse_into_json(website, email, password):
+    password_obj = {
+        website: {
+            "email": email,
+            "password": password
+        }
+    }
+    try:
+        with open('data.json', 'r') as data_file:
+            data = json.load(data_file)
+
+    except (json.JSONDecodeError, FileNotFoundError) as error:
+        print(error, "Since there was no file to open or read .")
+        with open('data.json', 'w') as data_file:
+            json.dump(password_obj, data_file, indent=4)
+
+    else:
+        data.update(password_obj)
+
+        with open('data.json', 'w') as data_file:
+            json.dump(data, data_file, indent=4)
 
 
 def submit_password():
@@ -28,12 +52,17 @@ def submit_password():
                                        message=f"These are the details entered: \n Email: {email}\n"
                                                f"Password {password} \n Is it ok to save?")
         if is_ok:
-            with open('data.txt', 'a') as data_file:
-                data_file.writelines(f'\n{website} | {email} | {password}')
-                website_input.delete(0, END)
-                email_input.delete(0, END)
-                password_input.delete(0, END)
-        messagebox.showinfo(title="details saved successfully!😊! \n and password copied to clipboard")
+            # with open('data.txt', 'a') as data_file:
+            #     data_file.writelines(f'\n{website} | {email} | {password}')
+            #     website_input.delete(0, END)
+            #     email_input.delete(0, END)
+            #     password_input.delete(0, END)
+            parse_into_json(website, email, password)
+            website_input.delete(0, END)
+            email_input.delete(0, END)
+            password_input.delete(0, END)
+
+        messagebox.showinfo(message="details saved successfully!😊! \n and password copied to clipboard", title="Status")
 
 
 # required objects
