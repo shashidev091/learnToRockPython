@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/reLearning/Inremediate_python/email_service/birthdays.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/reLearning/Inremediate_python/nato_phonetic_alphabet.csv">
           <value>
             <Attribute>
