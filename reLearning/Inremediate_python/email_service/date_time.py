@@ -37,6 +37,7 @@ birthday_dict = {(data_row['month'], data_row['day']): data_row for (index, data
 
 # with open('birthdays.csv') as data_file:
 #     print(data_file.readlines()[2])
+print(birthday_dict)
 
 if today in birthday_dict:
     birthday_person = birthday_dict[today]
@@ -55,3 +56,7 @@ if today in birthday_dict:
             from_addr=MY_EMAIL,
             msg=f"Subject:Happy Birthday!\n\n {final_letter}"
         )
+
+"""
+    - You can deploy this app for free in PythonAnywhere so that it runs automatically daily
+"""
