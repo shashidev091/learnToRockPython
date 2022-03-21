@@ -56,3 +56,7 @@ if today in birthday_dict:
             from_addr=MY_EMAIL,
             msg=f"Subject:Happy Birthday!\n\n {final_letter}"
         )
+
+"""
+    - You can deploy this app for free in PythonAnywhere so that it runs automatically daily
+"""
