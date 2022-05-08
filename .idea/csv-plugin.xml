@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/reLearning/Inremediate_python/files_directories/csv_file_handling/2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/reLearning/Inremediate_python/files_directories/us-states-game-start/50_states.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/reLearning/Inremediate_python/nato_phonetic_alphabet.csv">
           <value>
             <Attribute>
