@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/reLearning/Inremediate_python/files_directories/us-states-game-start/50_states.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/reLearning/Inremediate_python/nato_phonetic_alphabet.csv">
           <value>
             <Attribute>
