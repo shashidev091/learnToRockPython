@@ -53,3 +53,6 @@ print(it.__next__())
 print(next(it))
 
 
+for item in it:
+    print(item)
+
