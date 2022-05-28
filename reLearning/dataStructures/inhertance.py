@@ -39,3 +39,20 @@ class Combine(A, B):
 
 combine = Combine()
 combine.show()
+
+list_values = []
+
+for item in range(10):
+    list_values.append(item)
+
+print(list_values)
+
+it = iter(list_values)
+
+print(it.__next__())
+print(next(it))
+
+
+for item in it:
+    print(item)
+
