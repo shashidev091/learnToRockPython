@@ -17,6 +17,11 @@ class Student:
         else:
             print('S2 is greater')
 
+    def __sub__(self, other):
+        sub1 = self.m1 - other.m1
+        sub2 = self.m2 - other.m2
+        return Student(sub1, sub2)
+
 
 s1 = Student(10, 20)
 s2 = Student(30, 49)
@@ -26,3 +31,5 @@ s3 = s1 + s2
 print(s3.m1)
 
 is_greater = s1 > s2
+
+print((s1 - s2).m2)
