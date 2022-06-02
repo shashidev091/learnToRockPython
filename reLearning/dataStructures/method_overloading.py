@@ -32,4 +32,4 @@ print(s3.m1)
 
 is_greater = s1 > s2
 
-print((s1 - s2).m2)
+print((s2 - s1).m2)
