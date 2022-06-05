@@ -20,10 +20,17 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container mt-3 d-flex justify-content-center">
+    <div class="container mt-3 d-flex justify-content-center flex-column">
       <div class="col-sm-8 d-flex justify-content-center align-items-center">
-        <p class="mb-0">Hello Shashi {{ name }} Ji 😍🫶🏼 !!!  </p>
+        <p class="mb-0">Hello Shashi {{ name }} Ji 😍🫶🏼 !!!</p>
         <button type="button" class="btn btn-info mx-2">Info</button>
+      </div>
+      <div class="col-sm-8 d-flex justify-content-center align-items-center">
+        {% if name == "Bhagat" %}
+        <p>I am Shashi Bhushan {{ name }}</p>
+        {% else %}
+        <p>I am nobody 👾</p>
+        {% endif %}
       </div>
     </div>
   </body>
