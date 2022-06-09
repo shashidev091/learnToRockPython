@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def landing_page(request):
-    return HttpResponse("This seems great")
+    return render(request, 'index.html')
 
 def about_page(request):
     return HttpResponse('Hi! I am Shashi Bhushan Bhagat')
