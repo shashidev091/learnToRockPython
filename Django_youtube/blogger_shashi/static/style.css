@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to left, lightgreen, salmon);
+}
+
+nav > .logo, .nav-links {
+    padding: 0.7rem
+}
+
+.nav-links a {
+    text-decoration: none;
+    border: 1px solid lemonchiffon;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    color: brown;
+    text-decoration: double;
+    background-color: aquamarine;
+    font-size: larger;
+}
+
