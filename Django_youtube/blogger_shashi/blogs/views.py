@@ -19,3 +19,7 @@ def about_page(request):
 
 def services_page(request):
     return HttpResponse('<b>We have several sevices, you just have to ask what</b>')
+
+
+def blog(request):
+    return render(request, 'blog.html')
